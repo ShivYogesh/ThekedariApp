@@ -1,0 +1,22 @@
+.formwraper{
+    margin: 10px;
+    border: 2px solid green;
+    padding:2px;
+}
+.formheading{
+  
+    color:green;
+    font-size:20px;
+    text-align: center;
+    width:100%;
+   
+    
+}
+.formfooter{
+  
+    color: green;
+    font-size:20px;
+    text-align: right;
+    margin: 2px;
+    
+}

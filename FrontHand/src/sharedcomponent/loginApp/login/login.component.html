@@ -1,0 +1,51 @@
+<div class="formwraper">
+    <!-- Form Header Start Here -->
+    <div class="row">
+      <div class="formheading">
+        {{formheading}}
+      </div>
+    </div>
+    <!-- Form Header End Here -->
+  
+    <form  #loginform="ngForm" (ngSubmit)="chklogin(loginform)">
+  
+    <!-- Form Control Row Start Here  -->
+    <div class="row">
+      <div class="col-4 text-end">
+        <label for="username" class="form-label">User Name</label>
+      </div>
+      <div class="col-8">
+        <input type="text" class="form-control" id="idUserName" ngModel name="userName" placeholder="User Name" required #username="ngModel"/>
+       <span *ngIf="username.touched && !username.valid" class="text-danger">Pls Type User Name</span>
+      
+      </div>
+    </div>
+    <!-- Form Control Row End Here  -->
+    <!-- Form Control Row Start Here  -->
+    <div class="row">
+      <div class="col-4 text-end">
+        <label for="workorderamount" class="form-label ">Password</label>
+      </div>
+      <div class="col-8">
+        <input type="password" class="form-control" id="idUserPassword"  ngModel name="userPassword" required #userpassword="ngModel"/>
+        <span *ngIf="userpassword.touched && !userpassword.valid" class="text-danger">Pls Type Password</span>
+      </div>
+    </div>
+    <!-- Form Control Row End Here  -->
+   
+    <!-- Form Footer-->
+    <div class="formfooter row">
+      <div class="col-4"></div>
+      <div class="col-4"><input type="submit" class="btn btn-success" value="    Login    "  [disabled]="loginform.invalid"/></div>
+      <div class="col-4"></div>
+      
+  
+  
+  
+    </div>
+  </form>
+  </div><!-- end Here <div class="formwraper"> -->
+  
+  
+  
+  

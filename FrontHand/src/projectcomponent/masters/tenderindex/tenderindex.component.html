@@ -1,0 +1,232 @@
+<div class="formwraper">
+  <!-- Form Header Start Here -->
+  <div class="row">
+    <div class="formheading">
+      {{formheading}}
+    </div>
+  </div>
+  <!-- Form Header End Here -->
+
+  <form  #tenderindexadd="ngForm" (ngSubmit)="addnew(tenderindexadd)" action="addnew(tenderindexadd)">
+
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="tenderid" class="form-label">Tender Id</label>
+    </div>
+    <div class="col-8">
+      <input type="text" class="form-control" id="idTenderId" [(ngModel)]="objTenderIndex.id" name="tenderid"/>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="companyname" class="form-label">Company Name</label>
+    </div>
+    <div class="col-8">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="objTenderIndex.companyName" name="companyName">
+        @for(objval of companys;track  objval )
+        {
+          <option value="{{objval}}">{{objval}}</option>
+        }
+        
+      </select>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="department" class="form-label">Department</label>
+    </div>
+    <div class="col-8">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="objTenderIndex.department" name="Department">
+        @for(objval of departments;track  objval )
+        {
+          <option value="{{objval}}">{{objval}}</option>
+        }
+        
+      </select>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="tendertype" class="form-label">Tender Type</label>
+    </div>
+    <div class="col-8">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="objTenderIndex.tenderType" name="tendertype">
+        @for(objval of tenderTypes;track  objval )
+        {
+          <option value="{{objval}}">{{objval}}</option>
+        }
+       
+      </select>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="workname" class="form-label">Work Name</label>
+    </div>
+    <div class="col-8">
+      <textarea class="form-control" id="idworkname" rows="3" placeholder="Work Name" [(ngModel)]="objTenderIndex.workName" name="workName"></textarea>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="workorderamount" class="form-label ">Work Order Amount</label>
+    </div>
+    <div class="col-8">
+      <input type="text" class="form-control" id="idworkorderamount" placeholder="0.00" [(ngModel)]="objTenderIndex.workOrderAmount" name="workorderAmount">
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="workorderissue date" class="form-label">Work Order Issue Date</label>
+    </div>
+    <div class="col-8">
+      <input type="date" class="form-control" id="idworkorderdate" placeholder="" [(ngModel)]="objTenderIndex.workOrderIssueDate" name="workOrderIssueDate">
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="exampleFormControlInput1" class="form-label">Completaion Date</label>
+    </div>
+    <div class="col-8">
+      <input type="date" class="form-control" id="idworkOrderCompletationDate" placeholder="" [(ngModel)]="objTenderIndex.workOrderCompletationDate" name="workOrderCompletationDate">
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="workstatus" class="form-label">Work Status</label>
+    </div>
+    <div class="col-8">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="objTenderIndex.workStatus" name="workStatus">
+        @for(objval of workStatus;track  objval )
+        {
+          <option value="{{objval}}">{{objval}}</option>
+        }
+       
+
+      </select>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="pgstatus" class="form-label">P.G. Status</label>
+    </div>
+    <div class="col-8">
+
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="objTenderIndex.PGStatus" name="PGStatus">
+        @for(objval of PGStatus;track  objval )
+        {
+          <option value="{{objval}}">{{objval}}</option>
+        }
+       
+      </select>
+
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="secstatus" class="form-label">Sec. Status</label>
+    </div>
+    <div class="col-8">
+
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="objTenderIndex.secStatus" name="secStatus">
+        @for(objval of PGStatus;track  objval )
+        {
+          <option value="{{objval}}">{{objval}}</option>
+        }
+        
+      </select>
+
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="paymentstatus" class="form-label">Payment Status</label>
+    </div>
+    <div class="col-8">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="objTenderIndex.paymentStatus" name="paymentStatus">
+        @for(objval of paymentStatus;track  objval )
+        {
+          <option value="{{objval}}">{{objval}}</option>
+        }
+        
+      </select>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="tenderstatus" class="form-label">Tender Status</label>
+    </div>
+    <div class="col-8">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="objTenderIndex.tenderStatus" name="tenderstatus">
+        @for(objval of paymentStatus;track  objval )
+        {
+          <option value="{{objval}}">{{objval}}</option>
+        }
+        
+      </select>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+
+  <!-- Form Control Row Start Here  -->
+  <div class="row">
+    <div class="col-4 text-end">
+      <label for="remark" class="form-label">Remark</label>
+    </div>
+    <div class="col-8">
+      <textarea class="form-control" id="remark" rows="3" placeholder="Type Your Remark Here" [(ngModel)]="objTenderIndex.remark" name="remark"></textarea>
+    </div>
+  </div>
+  <!-- Form Control Row End Here  -->
+
+
+  <!-- Form Footer-->
+  <div class="formfooter row mt-3">
+    <div class="col-3"></div>
+    <div class="col-3"><input type="button" class="btn btn-danger" value="Delete" /></div>
+    <div class="col-3"><input type="button" class="btn btn-success" value="UpDate" /></div>
+    <div class="col-3"><input type="submit" class="btn btn-primary" value="Save" /></div>
+
+
+
+  </div>
+</form>
+</div><!-- end Here <div class="formwraper"> -->
+
+
+<div> 
+{{objTenderIndex.id}}<br>
+{{objTenderIndex.companyName}}<br>
+{{objTenderIndex.workName}}<br>
+{{objTenderIndex.workOrderIssueDate}}<br>
+{{objTenderIndex.workOrderCompletationDate}}<br>
+{{objTenderIndex.workOrderAmount}}<br>
+
+
+</div>

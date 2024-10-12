@@ -1,0 +1,21 @@
+ul{
+    list-style: none;
+    display: inline-flex;
+    font-size: 20px;
+    
+}
+ul>li{
+    padding-left: 30px;
+}
+ul>li>a{
+    text-decoration: none;
+    cursor: pointer;
+    color:white;
+
+}
+.activerout{
+    background-color: green;
+    color: red;
+    font-size: bold;
+    padding: 5px;
+}
