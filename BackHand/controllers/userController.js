@@ -1,19 +1,21 @@
 const mySQLConnection=require('../connection');
-const tabelName="tbl_usermaster";
-var _userModel=require('../dataModels/userModel');
+const tabelName="tbl_masters_users";
+var _dbTabelModel=require('../dataModels/userModel');
+var SQLQuery;
 
 /* START*/
 /*  This function Get All Data from Tabel*/
 async function handelGetAll(req,response){
-    console.log("hit handelGetAll Request : ");
-    mySQLConnection.query('select * from '+tabelName,(err,rows)=>{
+   // SQLQuery='select * from '+tabelName;//ye bhi ok ha
+    SQLQuery=`select * from ${tabelName}`;
+    mySQLConnection.query(SQLQuery,(err,rows)=>{
         if(err)
         {
-            return console.log("Error From  GetUser Api-  : " + err);
+            return response.status(400).json({msg:"Error From  Post Api Add New : " + err.message});
         }
         else
         {
-            return response.status(200).send(rows);
+            return response.status(200).json(rows);
         }
     })// End mySQLConnection
 };
@@ -22,16 +24,17 @@ async function handelGetAll(req,response){
 /* START*/
 /*  This function Get  Data By Id from Tabel -Single Record */
 async function handelGetById(req,response){
-    _userModel.id=req.params.id;
-    mySQLConnection.query('select * from '+tabelName+' where id='+req.params.id,(err,rows)=>{
+    //SQLQuery='select * from '+tabelName+' where id='+req.params.id; // ye ok ha
+    SQLQuery=`select * from ${tabelName} where id=${req.params.id}`;
+    mySQLConnection.query(SQLQuery,(err,rows)=>{
     
         if(err)
         {
-            return console.log("Error From  Get Api By Id : " + err);
+            return response.status(400).json({msg:"Error From  Post Api Add New : " + err.message});
         }
         else
         {
-            return response.status(200).send(rows);
+            return response.status(200).json(rows);
         }
     })// End mySQLConnection
 };
@@ -41,23 +44,18 @@ async function handelGetById(req,response){
 /* START*/
 /*  This function Add A New Record in Tabel */
 async function handelAddNewRecord(req,response){
-    var id=req.body.id;
-    var username=req.body.username;
-    var pwd=req.body.pwd;
-   
-    var sqlInsert="insert into "+tabelName+"(id,username,pwd) values("+id+",'"+username+"','"+pwd+"')";
-    console.log("calling handelAddNewRecord"+req.url);
-    console.log("new user creation url");
-    mySQLConnection.query(sqlInsert,(err,rows)=>{
+    //SQLQuery="insert into "+tabelName+"(username,pwd,isactive) values("+"'"+username+"','"+pwd+"' ,"+isactive+ ")"; ye bhi ok ha
+    SQLQuery=`insert into ${tabelName} (username,pwd,isactive) values('${req.body.username}','${req.body.pwd}',${req.body.isactive})`;
+    mySQLConnection.query(SQLQuery,(err,rows)=>{
     
         if(err)
         {
-            return response.status(400).send("Error From  Post Api Add New : " + err);
+            return response.status(400).json({msg:"Error From  Post Api Add New : " + err.message});
            
         }
         else
         {
-            return response.status(200).send("Record Added Suscess Fully with :"+rows);
+            return response.status(200).json({msg:"Record Added Successfully with :"+rows.id});
         }
     })// End mySQLConnection
 };
@@ -66,15 +64,19 @@ async function handelAddNewRecord(req,response){
 /* START*/
 /*  This function Update A Old Record By Id in Tabel */
 async function handelUpdateById(req,response){
-    mySQLConnection.query('select * from '+tabelName,(err,rows)=>{
+
+   // SQLQuery="update "+tabelName+" set username='"+req.body.username+"', pwd='"+req.body.pwd+"',isactive='"+req.body.isactive +"' where id="+req.params.id; // ye bhi ok ha 
+    SQLQuery=`update ${tabelName} set username='${req.body.username} ',pwd='${req.body.pwd}',isactive=${req.body.isactive} where id=${req.params.id}`;//ye bhi ok ha
+    
+    mySQLConnection.query(SQLQuery,(err,rows)=>{
     
         if(err)
         {
-            return console.log("Error From  Update Api By Id : " + err);
+            return response.status(400).json({msg:"Error From  Update Api : " + err.message});
         }
         else
         {
-            return response.status(200).send(rows);
+            return response.status(200).json({msg:"Record Updated Successfully"});
         }
     })// End mySQLConnection
 };
@@ -83,15 +85,17 @@ async function handelUpdateById(req,response){
 /* START*/
 /*  This function Delete A Record By Id in Tabel */
 async function handelDeleteById(req,response){
-    mySQLConnection.query('delete  from '+tabelName+' where id='+req.params.id,(err,rows)=>{
+   // SQLQuery='delete  from '+tabelName+' where id='+req.params.id;//ye bhi ok ha
+    SQLQuery=`delete from ${tabelName} where id=${req.params.id}`;
+    mySQLConnection.query(SQLQuery,(err,rows)=>{
     
         if(err)
         {
-            return response.status(400).send(err);
+            return response.status(400).json({msg:"Error From  Delete Api : " + err.message});
         }
         else
         {
-            return response.status(200).send(rows);
+            return response.status(200).json({msg:"Record Deleted Successfully"});
         }
     })// End mySQLConnection
 };

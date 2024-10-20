@@ -92,9 +92,12 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/colors.css"
+              "src/colors.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [ "./node_modules/jquery/dist/jquery.min.js",
+            "./node_modules/popper.js/dist/popper.js",
+            "./node_modules/bootstrap/dist/js/bootstrap.min.js"]
           }
         }
       }

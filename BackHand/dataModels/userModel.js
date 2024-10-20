@@ -1,7 +1,8 @@
 var userModel={
     id:Number,
     username:String,
-    pwd:String
+    pwd:String,
+    isactive:Boolean
 
 }
 module.exports =userModel;

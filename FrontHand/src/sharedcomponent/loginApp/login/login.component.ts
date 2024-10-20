@@ -8,57 +8,58 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  formheading="Login Form";
-  isFormValid:boolean=false;
-  _objUser:userModel={
-  userName:"y1",
-  userPassword:"y1"
-}
-http=inject(HttpClient);
-constructor(){
-  //injecting or Defining login serves bu constructor
- 
-}  
+  formheading = "Login Form";
+  isFormValid: boolean = false;
+  _objUser: userModel = {
+    id: 1,
+    username: "y1",
+    pwd: "y1",
+    isactive: true
 
-  loginchaking(){
-   
-   // const loginchaking=this._loginServices.chkLogin(this._objUser);
-
-   
   }
-  chklogin(formdata:NgForm){
-   // this._objUser.userName=formdata.control.user
-    
-    this._objUser.userName=formdata.value.userName;
-    this._objUser.userPassword=formdata.value.userPassword;
-    
-    console.log("Before API Calling");
-    try{
-      this.http.post("http://localhost:5000/login",this._objUser).subscribe((apiresult:any)=>{
-        console.log(" in Api Result ");
-        console.log(apiresult);
-        console.log(apiresult.loginStatus);
-        if(apiresult.loginStatus==true)
-        {
-          console.log("Login Api Hit Sucessfully");
-        }
-        else
-        {
-          console.log("Login Api Hit Failear Result");
-        }
-        
-      });
-    }catch(err){
-      console.log("Log By Catch Block "+err);
-    }
+  http = inject(HttpClient);
+  constructor() {
+    //injecting or Defining login serves bu constructor
 
-    
-    console.log("After API Calling");
+  }
 
+  loginchaking() {
+
+    // const loginchaking=this._loginServices.chkLogin(this._objUser);
+
+
+  }
+  chklogin(formdata: NgForm) {
+    // this._objUser.userName=formdata.control.user
+
+    this._objUser.username = formdata.value.userName;
+    this._objUser.pwd = formdata.value.userPassword;
+      this.http.post("http://localhost:5000/login", this._objUser).subscribe(
+        {
+          next: (apiresultdata: any) => {
+            if(apiresultdata._loginApiModel.loginStatus==true){
+              alert("Welcome Sir/Madam Login Sucessfull"+apiresultdata._loginApiModel.msg);
+              sessionStorage.setItem("mytokan",apiresultdata._loginApiModel.tokan);
+              localStorage.setItem("mytokan",apiresultdata._loginApiModel.tokan);
+            
+            }
+            else {
+              alert("Wrong Login Details !"+apiresultdata._loginApiModel.msg);
+            }
+            
+          },
+          error:(err:any)=>{
+            // if API Server Not Working or Network Not Working
+              alert("Problem in Calling API Its Network Issue or Server Issue Pls Contact to Admin");
+          }
+        }
+       );
+    
+   
   }
 }

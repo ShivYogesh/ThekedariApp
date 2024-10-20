@@ -4,6 +4,7 @@ const bodyparser=require('body-parser');
 const teting01Router=require('./routes/testing01');
 const testing02Router=require('./routes/testing02');
 const userRoute=require('./routes/userRoute');
+const tenderindexRoute=require('./routes/tenderindexRote');
 const loginRoute=require('./routes/loginRote');
 const cors=require('cors');
 require('dotenv').config();
@@ -21,6 +22,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use('/testing01',teting01Router);
 app.use('/testing02',testing02Router);
 app.use('/api/user/',userRoute);
+app.use('/api/tenderindex',tenderindexRoute);
 app.use('/login',loginRoute);
 
  

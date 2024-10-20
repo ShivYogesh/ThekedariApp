@@ -1,6 +1,7 @@
 var loginApiModel={
     loginStatus:String,
     statusCode:Number,
-    msg:String
+    msg:String,
+    tokan:String
 }
 module.exports=loginApiModel;

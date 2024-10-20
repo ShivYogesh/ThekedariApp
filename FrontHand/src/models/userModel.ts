@@ -1,5 +1,6 @@
 export interface userModel {
-    userName: string,
-    userPassword: string,
-
+    id:Number,
+    username:String,
+    pwd:String,
+    isactive:Boolean
 }

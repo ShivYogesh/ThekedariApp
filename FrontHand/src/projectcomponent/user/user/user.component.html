@@ -1,0 +1,38 @@
+<div class="wraper">
+    <div class="tableheading">
+        {{Datatabelname}}
+    </div>
+    <div class="searchdata"></div>
+    <div class="tablecontrolsheader"></div>
+    <div class="tabledata">
+        <table class="table table-bordered table-striped">
+            <!-- Tabel Header Start Here-->
+                    <td>#</td>
+                    <td>User Name</td>
+                    <td>password</td>
+                    <td>Action</td>
+               
+            <!-- Tabel Header End Here-->
+            <!-- Tabel Boady  Start Here-->
+            
+                @for (user of _users; track user.username;let index = $index) {
+                <tr>
+                    <td>{{index+1}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.pwd}}</td>
+                    <td>
+                        <button (click)="onclickUpdate(user.username)" class="btn btn-success">UpDate</button>
+                        <button (click)="onclickDelete(user.username)" class="btn btn-danger m-2">Delete</button>
+                    </td>
+                </tr>
+                }
+
+            <!-- Tabel Boady  End Here-->
+        </table>
+
+
+    </div>
+    <!-- End Tabel Data Here -->
+    <div class="tablecontrolsfooter"></div>
+
+</div>

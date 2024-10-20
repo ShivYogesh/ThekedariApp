@@ -18,6 +18,7 @@ export class NavbarComponent {
   // Caling logout Serves ->logout method for logout
   logout(){
     this._LogoutService.logout();
+    localStorage.setItem("mytokan","");
   }
   
 }

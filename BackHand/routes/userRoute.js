@@ -1,10 +1,10 @@
 const express=require('express');
 const router=express.Router();
 const {handelGetAll,handelGetById,handelAddNewRecord,handelUpdateById,handelDeleteById}=require('../controllers/userController');
-
+const checkAuth=require('../middleware/checkauth');
 
 //This Method is Geting All User by user route
-router.route('/').get(handelGetAll).post(handelAddNewRecord);// calling differ function from a single route path
+router.route('/').get(/*checkAuth*,*/handelGetAll).post(handelAddNewRecord);// calling differ function from a single route path
 //router.get('/',handelGetAll);
 //router.post(handelAddNewRecord);
 router.route('/:id')

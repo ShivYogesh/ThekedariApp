@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
 import { DeshboardComponent } from '../sharedcomponent/deshboard/deshboard/deshboard.component';
 import { LoginComponent } from '../sharedcomponent/loginApp/login/login.component';
 
