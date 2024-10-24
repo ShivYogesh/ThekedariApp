@@ -1,0 +1,40 @@
+
+*{
+    --darkcolor:green;
+    --white: #faf0e6;
+  }
+/*  Clear All Default Margin And Pading for All Page*/
+.container{
+    border: 2px solid red;
+    /*margin-top: 20px;*/
+    
+
+}
+.header{
+    background-color: var(--primarycolor);
+    min-height: 110px;
+    color: white;
+    padding: 2px;
+}
+.navbar{
+    background-color: blueviolet;
+    height: 50px;
+    color: white;
+}
+.sidemenu{
+    
+    height: 100%;   
+    width: 100%;
+    color: darkblue;
+}
+.mainworkplace{
+    background-color: bisque;
+    min-height: 650px;
+}
+.footer{
+    background-color: var(--primarycolor);
+    min-height: 150px;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+}

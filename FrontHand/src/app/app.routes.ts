@@ -4,13 +4,21 @@ import { LoginComponent } from '../sharedcomponent/loginApp/login/login.componen
 import { NotFoundComponent } from '../sharedcomponent/not-found/not-found.component';
 import { isLogedGuard } from '../sharedcomponent/Gaurds/is-loged.guard';
 import { UserComponent } from '../projectcomponent/user/user/user.component';
+import { DeshboardComponent } from '../sharedcomponent/deshboard/deshboard/deshboard.component';
+import { LayoutComponent } from '../sharedcomponent/layout/layout.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/login',pathMatch:'full'},
-    {path:"tenderindex",title:"TenderIndex",component:TenderindexComponent,canActivate:[isLogedGuard]},
-    {path:"login",component:LoginComponent},
-    {path:"user",component:UserComponent},
+   
+    {path:'login',component:LoginComponent},
 
+    {path:'',component:LayoutComponent,
+        children:[
+            {path:'deshboard',title:"Deshboard",component:DeshboardComponent,canActivate:[isLogedGuard]},
+            {path:'user',title:"User",component:UserComponent,canActivate:[isLogedGuard]},
+            {path:'tenderindex',title:"TenderIndex",component:TenderindexComponent,canActivate:[isLogedGuard]},
+        ]
+    },
     {path:"**",component:NotFoundComponent}
 
     

@@ -22,11 +22,21 @@ export class UserComponent implements OnInit {
    ];
   //const myArr: Cricketer[] = [cktr1, cktr2, cktr3]; 
   ngOnInit(): void {
+   
     try {
+     
       this.http.get("http://localhost:5000/api/user").subscribe((apiresult:any)=>{
-        this._users=apiresult;
+        if(apiresult)
+        {
+          this._users=apiresult;
+        }
+        else{
+          alert('No Data From API : ');
+        }
+        
       });
     } catch (error) {
+      alert('Error from ngOnInit-user API : '+error);
       
     }
     

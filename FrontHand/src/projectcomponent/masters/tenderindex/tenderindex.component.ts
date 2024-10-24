@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import{tenderIndexModel}from '../../../../src/models/tenderIndexModel';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-tenderindex',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,ReactiveFormsModule,CommonModule],
   templateUrl: './tenderindex.component.html',
   styleUrl: './tenderindex.component.css'
 })
@@ -36,6 +37,28 @@ export class TenderindexComponent {
     tenderStatus:"",
     remark:""
 
+  }
+  dataform:FormGroup;
+  error:Boolean=false;
+  constructor(){
+    this.dataform=new FormGroup({
+      id:new FormControl("",),
+      companyName:new FormControl("Shiv Construction",[Validators.required]),
+      department:new FormControl("",),
+      tenderType:new FormControl("",),
+      workName:new FormControl("",),
+      workOrderAmount:new FormControl("",),
+      workOrderIssueDate:new FormControl("",),
+      workOrderCompletationDate:new FormControl("",),
+      workStatus:new FormControl("",),
+      PGStatus:new FormControl("",),
+      SecStatus:new FormControl("",),
+      secStatus:new FormControl("",),
+      paymentStatus:new FormControl("",),
+      tenderStatus:new FormControl("",),
+      remark:new FormControl("",)
+
+    });
   }
   addnew(objhtmlForm:NgForm)
   {

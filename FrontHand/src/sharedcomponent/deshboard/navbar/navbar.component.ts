@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LogoutService } from '../../../services/logout.service';
+
 
 
 @Component({
@@ -12,13 +12,10 @@ import { LogoutService } from '../../../services/logout.service';
 })
 export class NavbarComponent {
   
-  constructor(private _LogoutService: LogoutService){
+  constructor(){
   }
   activerout:string="activerout";//Hold Active Route Decoration Class Name 
   // Caling logout Serves ->logout method for logout
-  logout(){
-    this._LogoutService.logout();
-    localStorage.setItem("mytokan","");
-  }
+  
   
 }

@@ -1,49 +1,42 @@
-<div class="formwraper">
+<div class="  formwraper text-center">
     <!-- Form Header Start Here -->
-    <div class="row">
-      <div class="formheading">
-        {{formheading}}
-      </div>
-    </div>
+   <div class="row  formheading text-center">{{formheading}}</div>
     <!-- Form Header End Here -->
+    <form  #loginform="ngForm" (ngSubmit)="loginchaking(loginform)">
   
-    <form  #loginform="ngForm" (ngSubmit)="chklogin(loginform)">
-  
-    <!-- Form Control Row Start Here  -->
-    <div class="row">
-      <div class="col-4 text-end">
-        <label for="username" class="form-label">User Name</label>
+      <!-- Form Control Row Start Here  -->
+      <div class="row mt-3">
+        <div class="col-4 text-end">
+          <label for="username" class="form-label">User Name</label>
+        </div>
+        <div class="col-8 ">
+          <input type="text" class="form-control mr-2" id="idUserName" ngModel name="userName" placeholder="User Name" required #username="ngModel"/>
+         <span *ngIf="username.touched && !username.valid" class="text-danger">Pls Type User Name</span>
+        
+        </div>
       </div>
-      <div class="col-8">
-        <input type="text" class="form-control" id="idUserName" ngModel name="userName" placeholder="User Name" required #username="ngModel"/>
-       <span *ngIf="username.touched && !username.valid" class="text-danger">Pls Type User Name</span>
-      
+      <!-- Form Control Row End Here  -->
+      <!-- Form Control Row Start Here  -->
+      <div class="row mt-3">
+        <div class="col-4 text-end">
+          <label for="workorderamount" class="form-label ">Password</label>
+        </div>
+        <div class="col-8">
+          <input type="password" class="form-control" id="idUserPassword"  ngModel name="userPassword" required #userpassword="ngModel"/>
+          <span *ngIf="userpassword.touched && !userpassword.valid" class="text-danger">Pls Type Password</span>
+        </div>
       </div>
-    </div>
-    <!-- Form Control Row End Here  -->
-    <!-- Form Control Row Start Here  -->
-    <div class="row">
-      <div class="col-4 text-end">
-        <label for="workorderamount" class="form-label ">Password</label>
+      <!-- Form Control Row End Here  -->
+     
+      <!-- Form Footer-->
+      <div class="formfooter row mt-3">
+        <div class="col-4"></div>
+        <div class="col-4 "><input type="submit" class="btn btn-success" value="    Login    "  [disabled]="loginform.invalid"/></div>
+        <div class="col-4"></div>
       </div>
-      <div class="col-8">
-        <input type="password" class="form-control" id="idUserPassword"  ngModel name="userPassword" required #userpassword="ngModel"/>
-        <span *ngIf="userpassword.touched && !userpassword.valid" class="text-danger">Pls Type Password</span>
-      </div>
-    </div>
-    <!-- Form Control Row End Here  -->
-   
-    <!-- Form Footer-->
-    <div class="formfooter row">
-      <div class="col-4"></div>
-      <div class="col-4"><input type="submit" class="btn btn-success" value="    Login    "  [disabled]="loginform.invalid"/></div>
-      <div class="col-4"></div>
-      
-  
-  
-  
-    </div>
-  </form>
+    </form>
+
+
   </div><!-- end Here <div class="formwraper"> -->
   
   

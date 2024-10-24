@@ -4,6 +4,7 @@ import { userModel } from '../../../models/userModel';
 import { LoginService } from '../../../services/login.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,17 +24,27 @@ export class LoginComponent {
 
   }
   http = inject(HttpClient);
-  constructor() {
+  router = inject(Router);
+  constructor(private _loginServices: LoginService) {
     //injecting or Defining login serves bu constructor
 
   }
 
-  loginchaking() {
+  loginchaking(formdata: NgForm) {
 
-    // const loginchaking=this._loginServices.chkLogin(this._objUser);
-
+    /* Geting Data From Form and Pasing to Serves*/
+    this._objUser.username = formdata.value.userName;
+    this._objUser.pwd = formdata.value.userPassword;
+    this._loginServices.chkLogin(this._objUser);
 
   }
+
+
+
+
+
+
+  /*  this Code copy and Pase in A Login Serves so here is comment
   chklogin(formdata: NgForm) {
     // this._objUser.userName=formdata.control.user
 
@@ -45,7 +56,8 @@ export class LoginComponent {
             if(apiresultdata._loginApiModel.loginStatus==true){
               alert("Welcome Sir/Madam Login Sucessfull"+apiresultdata._loginApiModel.msg);
               sessionStorage.setItem("mytokan",apiresultdata._loginApiModel.tokan);
-              localStorage.setItem("mytokan",apiresultdata._loginApiModel.tokan);
+              sessionStorage.setItem("isUserLoged","userloged");
+              this.router.navigateByUrl('/deshboard');
             
             }
             else {
@@ -55,11 +67,12 @@ export class LoginComponent {
           },
           error:(err:any)=>{
             // if API Server Not Working or Network Not Working
-              alert("Problem in Calling API Its Network Issue or Server Issue Pls Contact to Admin");
+              alert("Problem in Calling API Err from Server Is : "+err.message);
           }
         }
        );
     
    
   }
+       */
 }

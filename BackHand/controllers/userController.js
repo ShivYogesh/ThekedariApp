@@ -26,6 +26,7 @@ async function handelGetAll(req,response){
 async function handelGetById(req,response){
     //SQLQuery='select * from '+tabelName+' where id='+req.params.id; // ye ok ha
     SQLQuery=`select * from ${tabelName} where id=${req.params.id}`;
+    console.log('SQLUery : '+SQLQuery);
     mySQLConnection.query(SQLQuery,(err,rows)=>{
     
         if(err)

@@ -8,7 +8,7 @@ import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'app-deshboard',
   standalone: true,
-  imports: [RouterOutlet,SidenavbarComponent,NavbarComponent,HeaderComponent,FooterComponent],
+  imports: [],
   templateUrl: './deshboard.component.html',
   styleUrl: './deshboard.component.css'
 })

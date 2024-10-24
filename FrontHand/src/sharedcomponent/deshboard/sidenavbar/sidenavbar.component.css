@@ -1,19 +1,27 @@
+.sidenavbarwraper{
+    background-color:darkblue;
+    height:100%;
+    color:white;
+    padding:5px;
+   
+}
+
 ul{
     list-style: none;
     margin: 0;
 }
-ul>li>a{
+a{
     display: list-item;
     text-decoration: none;
     font-size: 20px;
     color:red;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-left: 10px;
     border: 1px solid white;
 }
 
-ul>li>a:hover{
-    background-color: blue;
+a:hover{
+    background-color: darkblue;
     color: white;
     font-size: 24px;
     cursor: pointer;
@@ -42,4 +50,17 @@ ul>li>a:hover{
   width: 100%;
   text-align: center;
   
+}
+.menutext{
+    color:white;
+    font-size: 20px;
+    padding: 5px;
+}
+.menuicon{
+    color:white;
+    font-size: 20px;
+    margin: 2px;
+    text-align: left;
+    height: 30px;
+    width: 30px;
 }

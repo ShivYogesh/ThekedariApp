@@ -7,7 +7,7 @@ export class LogoutService {
 
   constructor() { }
   logout(){
-    sessionStorage.setItem("isUserLoged","userLogOut");
-    alert("Logout");
+    sessionStorage.clear();
+    
   }
 }

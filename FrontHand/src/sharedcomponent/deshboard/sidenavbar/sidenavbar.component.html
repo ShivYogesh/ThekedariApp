@@ -1,16 +1,30 @@
-<div class="row">
-    <div class="userinfo">
-        <img class="userpic" src="{{userpicpath}}" alt="user Pic">
-        <p class="username">{{username}}</p>
+<div class="sidenavbarwraper">
+    <!--  Row For User Info Start -->
+    <div class="row">
+        <div class="userinfo">
+            <img class="userpic" src="{{userpicpath}}" alt="user Pic">
+            <p class="username">{{username}}</p>
+        </div>
     </div>
-</div>
-<div class="menuitems">
-    <ul>
-        <li><a routerLink="tenderindex">Tender Index</a></li>
-        <li><a routerLink="/user" >User</a></li>
-        <li><a href="#">Link-02</a></li>
-        <li><a href="#">Link-03</a></li>
-        <li><a href="#">Link-04</a></li>
-        <li><a href="#">Link-05</a></li>
-    </ul>
+    <!--  Row For User Info End -->
+    <!--  Row For Menu Info Start -->
+    <div class="row">
+        <ul>
+            @for(item of menuItems ;track item){
+            <div class="menudiv">
+                <li>
+                    <a routerLink="{{item.menuLink}}" class="menulink">
+                        <i class="{{item.menuIcon}} menuicon"></i>
+                        <span class="menutext">
+                            {{item.menuText}}
+                        </span>
+
+                    </a>
+                </li>
+            </div>
+
+            }
+        </ul>
+    </div>
+    <!--  Row For Menu Info End -->
 </div>
