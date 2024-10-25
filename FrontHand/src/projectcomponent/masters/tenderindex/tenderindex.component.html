@@ -17,6 +17,10 @@
     <div class="col-8">
       <input type="text" class="form-control"  formControlName="id" />
     </div>
+<!-- Error Block Start -->
+<div class="text-danger" *ngIf="dataform.controls['id'].invalid">error!</div>
+<!-- Error Block End -->
+
   </div>
   <!-- Form Control Row End Here  -->
   <!-- Form Control Row Start Here  -->
@@ -33,7 +37,7 @@
         
       </select>
       <!-- Error Block Start -->
-       <div class="text-danger" *ngIf="dataform.controls['companyName'].touched">error!</div>
+       <div class="text-danger" *ngIf="dataform.controls['companyName'].invalid">error! - (option Must Selected/Pls Select option)</div>
       <!-- Error Block End -->
     </div>
     </div>
@@ -52,6 +56,10 @@
         }
         
       </select>
+       <!-- Error Block Start -->
+       <div class="text-danger" *ngIf="dataform.controls['department'].invalid">error! - (Option Must Selected/Pls Select Optetion)</div>
+      <!-- Error Block End -->
+
     </div>
   </div>
   <!-- Form Control Row End Here  -->
@@ -68,6 +76,9 @@
         }
        
       </select>
+     <!-- Error Block Start -->
+     <div class="text-danger" *ngIf="dataform.controls['tenderType'].invalid">error! - (Option Must Selected/Pls Select Option )</div>
+     <!-- Error Block End -->
     </div>
   </div>
   <!-- Form Control Row End Here  -->
@@ -78,7 +89,11 @@
     </div>
     <div class="col-8">
       <textarea class="form-control" id="idworkname" rows="3" placeholder="Work Name" formControlName="workName"></textarea>
+      <!-- Error Block Start -->
+    <div class="text-danger" *ngIf="dataform.controls['workName'].invalid">error! - (Blank Name is Not Allwed/Pls Type Work Name)</div>
+    <!-- Error Block End -->
     </div>
+    
   </div>
   <!-- Form Control Row End Here  -->
 
@@ -90,6 +105,9 @@
     <div class="col-8">
       <input type="text" class="form-control" id="idworkorderamount" placeholder="0.00" formControlName="workOrderAmount">
     </div>
+    <!-- Error Block Start -->
+    <div class="text-danger" *ngIf="dataform.controls['workOrderAmount'].invalid">error! - (Work Order Amount must fill)</div>
+    <!-- Error Block End -->
   </div>
   <!-- Form Control Row End Here  -->
   <!-- Form Control Row Start Here  -->
@@ -100,6 +118,9 @@
     <div class="col-8">
       <input type="date" class="form-control" id="idworkorderdate" placeholder="" formControlName="workOrderIssueDate">
     </div>
+    <!-- Error Block Start -->
+    <div class="text-danger" *ngIf="dataform.controls['workOrderIssueDate'].invalid">error! - (Work Order Issue Date must fill)</div>
+    <!-- Error Block End -->
   </div>
   <!-- Form Control Row End Here  -->
   <!-- Form Control Row Start Here  -->
@@ -110,6 +131,9 @@
     <div class="col-8">
       <input type="date" class="form-control" id="idworkOrderCompletationDate" placeholder="" formControlName="workOrderCompletationDate">
     </div>
+    <!-- Error Block Start -->
+    <div class="text-danger" *ngIf="dataform.controls['workOrderCompletationDate'].invalid">error! - (Work Order Issue Completation must fill)</div>
+    <!-- Error Block End -->
   </div>
   <!-- Form Control Row End Here  -->
   <!-- Form Control Row Start Here  -->
@@ -123,9 +147,10 @@
         {
           <option value="{{objval}}">{{objval}}</option>
         }
-       
-
-      </select>
+       </select>
+      <!-- Error Block Start -->
+    <div class="text-danger" *ngIf="dataform.controls['workStatus'].invalid">error! - (Must Selected/Pls Select )</div>
+    <!-- Error Block End -->
     </div>
   </div>
   <!-- Form Control Row End Here  -->
@@ -143,7 +168,9 @@
         }
        
       </select>
-
+    <!-- Error Block Start -->
+    <div class="text-danger" *ngIf="dataform.controls['PGStatus'].invalid">error! - (Must Selected/Pls Select )</div>
+    <!-- Error Block End -->
     </div>
   </div>
   <!-- Form Control Row End Here  -->
@@ -161,7 +188,9 @@
         }
         
       </select>
-
+   <!-- Error Block Start -->
+   <div class="text-danger" *ngIf="dataform.controls['secStatus'].invalid">error! - (Must Selected/Pls Select )</div>
+   <!-- Error Block End -->
     </div>
   </div>
   <!-- Form Control Row End Here  -->
@@ -178,6 +207,9 @@
         }
         
       </select>
+       <!-- Error Block Start -->
+   <div class="text-danger" *ngIf="dataform.controls['paymentStatus'].invalid">error! - (Must Selected/Pls Select )</div>
+   <!-- Error Block End -->
     </div>
   </div>
   <!-- Form Control Row End Here  -->
@@ -194,6 +226,9 @@
         }
         
       </select>
+       <!-- Error Block Start -->
+   <div class="text-danger" *ngIf="dataform.controls['tenderStatus'].invalid">error! - (Must Selected/Pls Select )</div>
+   <!-- Error Block End -->
     </div>
   </div>
   <!-- Form Control Row End Here  -->
@@ -213,9 +248,9 @@
   <!-- Form Footer-->
   <div class="formfooter row mt-3">
     <div class="col-3"></div>
-    <div class="col-3"><input type="button" class="btn btn-danger" value="Delete" /></div>
-    <div class="col-3"><input type="button" class="btn btn-success" value="UpDate" /></div>
-    <div class="col-3"><input type="submit" class="btn btn-primary" value="Save" /></div>
+    <div class="col-3"><input type="button" class="btn btn-danger" value="Delete"  [disabled]="dataform.invalid"/></div>
+    <div class="col-3"><input type="button" class="btn btn-success" value="UpDate" [disabled]="dataform.invalid" /></div>
+    <div class="col-3"><input type="submit" class="btn btn-primary" value="Save" [disabled]="dataform.valid"/></div>
 
 
 
@@ -231,6 +266,7 @@
 {{objTenderIndex.workOrderIssueDate}}<br>
 {{objTenderIndex.workOrderCompletationDate}}<br>
 {{objTenderIndex.workOrderAmount}}<br>
+{{dataform.controls['id'].value}}
 
 
 </div>

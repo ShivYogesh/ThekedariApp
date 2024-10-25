@@ -44,18 +44,18 @@ export class TenderindexComponent {
     this.dataform=new FormGroup({
       id:new FormControl("",),
       companyName:new FormControl("Shiv Construction",[Validators.required]),
-      department:new FormControl("",),
-      tenderType:new FormControl("",),
-      workName:new FormControl("",),
+      department:new FormControl("",[Validators.required]),
+      tenderType:new FormControl("",[Validators.required]),
+      workName:new FormControl("",[Validators.required]),
       workOrderAmount:new FormControl("",),
       workOrderIssueDate:new FormControl("",),
       workOrderCompletationDate:new FormControl("",),
-      workStatus:new FormControl("",),
-      PGStatus:new FormControl("",),
-      SecStatus:new FormControl("",),
-      secStatus:new FormControl("",),
-      paymentStatus:new FormControl("",),
-      tenderStatus:new FormControl("",),
+      workStatus:new FormControl("",[Validators.required]),
+      PGStatus:new FormControl("",[Validators.required]),
+      SecStatus:new FormControl("",[Validators.required]),
+      secStatus:new FormControl("",[Validators.required]),
+      paymentStatus:new FormControl("",[Validators.required]),
+      tenderStatus:new FormControl("",[Validators.required]),
       remark:new FormControl("",)
 
     });

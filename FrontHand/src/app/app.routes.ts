@@ -14,9 +14,13 @@ export const routes: Routes = [
 
     {path:'',component:LayoutComponent,
         children:[
-            {path:'deshboard',title:"Deshboard",component:DeshboardComponent,canActivate:[isLogedGuard]},
-            {path:'user',title:"User",component:UserComponent,canActivate:[isLogedGuard]},
+           /* {path:'deshboard',title:"Deshboard",component:DeshboardComponent,canActivate:[isLogedGuard]},
+           {path:'user',title:"User",component:UserComponent,canActivate:[isLogedGuard]},
             {path:'tenderindex',title:"TenderIndex",component:TenderindexComponent,canActivate:[isLogedGuard]},
+            */
+            {path:'deshboard',title:"Deshboard",component:DeshboardComponent},
+            {path:'user',title:"User",component:UserComponent},
+            {path:'tenderindex',title:"TenderIndex",component:TenderindexComponent},
         ]
     },
     {path:"**",component:NotFoundComponent}
