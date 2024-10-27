@@ -220,7 +220,7 @@
     </div>
     <div class="col-8">
       <select class="form-select" aria-label="Default select example" formControlName="tenderStatus">
-        @for(objval of paymentStatus;track  objval )
+        @for(objval of tenderStatus;track  objval )
         {
           <option value="{{objval}}">{{objval}}</option>
         }
@@ -248,9 +248,9 @@
   <!-- Form Footer-->
   <div class="formfooter row mt-3">
     <div class="col-3"></div>
-    <div class="col-3"><input type="button" class="btn btn-danger" value="Delete"  [disabled]="dataform.invalid"/></div>
+    <div class="col-3"><input type="button" class="btn btn-danger" value="Delete"  [disabled]="dataform.invalid" /></div>
     <div class="col-3"><input type="button" class="btn btn-success" value="UpDate" [disabled]="dataform.invalid" /></div>
-    <div class="col-3"><input type="submit" class="btn btn-primary" value="Save" [disabled]="dataform.valid"/></div>
+    <div class="col-3"><input type="submit" class="btn btn-primary" value="Save"   [disabled]="dataform.invalid" (click)="saveNewRecord()"/></div>
 
 
 
@@ -259,14 +259,4 @@
 </div><!-- end Here <div class="formwraper"> -->
 
 
-<div> 
-{{objTenderIndex.id}}<br>
-{{objTenderIndex.companyName}}<br>
-{{objTenderIndex.workName}}<br>
-{{objTenderIndex.workOrderIssueDate}}<br>
-{{objTenderIndex.workOrderCompletationDate}}<br>
-{{objTenderIndex.workOrderAmount}}<br>
-{{dataform.controls['id'].value}}
-
-
-</div>
+  

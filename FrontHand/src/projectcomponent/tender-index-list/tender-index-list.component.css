@@ -1,0 +1,16 @@
+.tableheading{
+    text-align: center;
+    font-size: 24px;
+}
+.tabledata{
+    border: 1px solid green;
+    display: flex;
+}
+.table{
+    table-layout: fixed;
+    width: 100%;
+}
+.td{
+    width: 0;
+  min-width: fit-content;
+}
