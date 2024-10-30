@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { menuModel } from '../../../models/menuModel';
 
 
 
@@ -15,7 +16,14 @@ export class NavbarComponent {
   constructor(){
   }
   activerout:string="activerout";//Hold Active Route Decoration Class Name 
-  // Caling logout Serves ->logout method for logout
+  
+
+  menuItems:menuModel[]=[{menuText:'Home',menuLink:'', menuIcon:'fa-solid fa-house',isactive:true},
+    {menuText:'About',menuLink:'aboutus', menuIcon:'',isactive:true},
+    {menuText:'Contact-Us',menuLink:'contactus', menuIcon:'',isactive:true},
+    
+    
+  ];
   
   
 }

@@ -13,9 +13,9 @@ import { menuModel } from '../../../models/menuModel';
 
 export class SidenavbarComponent {
   
-  menuItems:menuModel[]=[{menuText:'Deshboard',menuLink:'deshboard', menuIcon:'fa-solid fa-house',isactive:true},
+  menuItems:menuModel[]=[{menuText:'Deshboard',menuLink:'deshboard', menuIcon:'fas fa-tv ',isactive:true},
     {menuText:'Tender Index List',menuLink:'tenderindexlist', menuIcon:'fa-solid fa-mug-saucer',isactive:true},
-    {menuText:'Tender Index',menuLink:'tenderindex', menuIcon:'fa-solid fa-mug-saucer',isactive:true},
+    {menuText:'Tender Index',menuLink:'tenderindex', menuIcon:'far fa-folder',isactive:true},
     {menuText:'User',menuLink:'user', menuIcon:'fa-solid fa-user',isactive:true},
     {menuText:'Masters',menuLink:'menulink-04', menuIcon:'fa-solid fa-cube',isactive:true},
     {menuText:'Tractions',menuLink:'menulink-05', menuIcon:'fa-solid fa-gears',isactive:true},

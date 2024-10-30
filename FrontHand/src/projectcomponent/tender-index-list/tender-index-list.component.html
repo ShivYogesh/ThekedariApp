@@ -1,66 +1,10 @@
 <div class="wraper">
-    <div class="tableheading">
-        {{Datatabelname}}
-    </div>
-    <div class="searchdata"></div>
-    <div class="tablecontrolsheader"></div>
-    <div class="tabledata">
-        <table class="table table-bordered table-striped">
-            <!-- Tabel Header Start Here-->
-            <td class="td">Slno</td>
-            <td class="td">id</td>
-            <td class="td">companyName</td>
-            <td class="td">department</td>
-            <td class="td">tenderStatus</td>
-            <td class="td">workName</td>
-            <td class="td">workOrderAmount</td>
-            <td class="td">workOrderIssueDate</td>
-            <td class="td">workOrderCompletationDate</td>
-            <td class="td">workStatus</td>
-            <td class="td">PGStatus</td>
-            <td class="td">secStatus</td>
-            <td class="td">paymentStatus</td>
-            <td class="td">tenderStatus</td>
-            <td class="td">remark</td>
-            <td class="td">Action</td>
-
-               
-            <!-- Tabel Header End Here-->
-            <!-- Tabel Boady  Start Here-->
-            
+            <!-- For Card Format Start Here-->
+            <div class="row">
                 @for (obj of _tenderIndexList; track obj.id ;let index = $index) {
-              
-              <!--    Tabel One Row Start Here -->
-                    <tr>
-                    <td>{{index+1}}</td>
-                    <td>{{obj.id}}</td>
-                    <td>{{obj.companyName}}</td>
-                    <td>{{obj.department}}</td>
-                    <td>{{obj.tenderStatus}}</td>
-                    <td>{{obj.workName}}</td>
-                    <td>{{obj.workOrderAmount}}</td>
-                    <td>{{obj.workOrderIssueDate}}</td>
-                    <td>{{obj.workOrderCompletationDate}}</td>
-                    <td>{{obj.workStatus}}</td>
-                    <td>{{obj.PGStatus}}</td>
-                    <td>{{obj.secStatus}}</td>
-                    <td>{{obj.paymentStatus}}</td>
-                    <td>{{obj.tenderStatus}}</td>
-                    <td>{{obj.remark}}</td>
-                    <td>
-                        <button  class="btn btn-success">UpDate</button>
-                        <button  class="btn btn-danger m-2">Delete</button>
-                    </td>
-                </tr>
-                <!-- Tabel End Hare -->
-                } <!--  For End Here-->
-                @empty {
-                    <h3>No Data Found</h3>
-                }
-            <!-- Tabel Boady  End Here-->
-        </table>
-    </div>
-    <!-- End Tabel Data Here -->
-    <div class="tablecontrolsfooter"></div>
-
+                <div class="col-4">
+                    <app-tendercard [data]="obj"></app-tendercard>
+                </div>
+                 } <!-- For Card Format End Here-->
+            </div>
 </div>

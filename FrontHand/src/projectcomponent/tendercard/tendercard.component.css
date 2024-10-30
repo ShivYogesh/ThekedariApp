@@ -1,0 +1,13 @@
+.wrapper{
+    min-height: 200px;
+    min-width: 150px;
+
+    border: 1px solid gray;
+    margin: 1px;
+}
+.tbl{
+    border: 1px solid green;
+}
+td{
+    border: 1px solid green;
+}

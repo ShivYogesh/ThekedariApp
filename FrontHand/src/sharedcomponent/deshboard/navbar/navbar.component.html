@@ -1,7 +1,7 @@
 <ul >
-    <li ><a  routerLink="/" [routerLinkActive]="activerout" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-    <li ><a  routerLink="/aboutus" [routerLinkActive]="activerout">About-US</a></li>
-    <li ><a  routerLink="/contactus" [routerLinkActive]="activerout">Contact-US</a></li>
+    <li ><a  routerLink="{{menuItems[0].menuLink}}" [routerLinkActive]="activerout" [routerLinkActiveOptions]="{ exact: true }"><i class="{{menuItems[0].menuIcon}}"></i>{{menuItems[0].menuText}}</a></li>
+    <li ><a  routerLink="{{menuItems[1].menuLink}}" [routerLinkActive]="activerout"><i class="{{menuItems[1].menuIcon}}"></i>{{menuItems[1].menuText}}</a></li>
+    <li ><a  routerLink="{{menuItems[2].menuLink}}" [routerLinkActive]="activerout"><i class="{{menuItems[2].menuIcon}}"></i>{{menuItems[2].menuText}}</a></li>
    
 
 </ul>
