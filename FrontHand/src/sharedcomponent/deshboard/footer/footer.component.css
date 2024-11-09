@@ -1,0 +1,7 @@
+.wrapper{
+    background-color: var(--footerbgcolor);
+    color:var(--footertextcolor);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}

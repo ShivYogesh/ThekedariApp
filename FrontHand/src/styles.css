@@ -1,6 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    --primarycolor:darkblue;
-    --seconderycolor:red;
+* {
+
+    a {
+        text-decoration: none;
+
+    }
+
+
+    
+    --color-bg-R: 0;
+    /* Hue        */
+    --color-bg-G: 255;
+    /* Saturation */
+    --color-bg-B:0;
+    /* Lightness  */
+    --color-text-R: 0;
+    /* Hue        */
+    --color-text-G:200;
+    /* Saturation */
+    --color-text-B: 0;
+    /* Lightness  */
+
+    
+    --primarycolor:rgb(var(--color-bg-R),var(--color-bg-G),var(--color-bg-B));
+    --seconderycolor: rgb(var(--color-text-R),var(--color-text-G),var(--color-text-B));
+
+   /* --primarycolor:green;
+    --seconderycolor: white;
+*/
+
+    /* Heaer Stayling */
+    --headerbgcolor:green; /*var(--primarycolor);*/
+    --headertextcolor:  white; /* var(--seconderycolor);*/
+    /* side Bar Stayling */
+    --sidebarbgcolor: green; /*var(--primarycolor);*/
+    --sidebartextcolor: white; /*var(--seconderycolor);*/
+
+    /* Menubar at top Stayling */
+    --navbarbgcolor: var(--sidebarbgcolor);
+    --navbartextcolor:var(--sidebartextcolor);
+    /* main area Stayling  */
+    --mainbgcolor: white;/*var(--headerbgcolor);*/
+    --maintextcolor:darkgreen;/*var(--headertextcolor);*/
+
+
+    /* footerbar  stayling */
+    --footerbgcolor: var(--headerbgcolor);
+    --footertextcolor: var(--headertextcolor);
+
+
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import{tenderIndexModel}from '../../../../src/models/tenderIndexModel';
+import{tenderIndexModel}from '../../../models/dataTable/tenderIndexModel';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule, KeyValuePipe } from '@angular/common';
 

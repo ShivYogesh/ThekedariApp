@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { menuModel } from '../../../models/menuModel';
+import { menuModel } from '../../../models/UI/menuModel';
 
 
 

@@ -1,10 +1,8 @@
-<div class="wraper">
-            <!-- For Card Format Start Here-->
-            <div class="row">
-                @for (obj of _tenderIndexList; track obj.id ;let index = $index) {
-                <div class="col-4">
-                    <app-tendercard [data]="obj"></app-tendercard>
-                </div>
-                 } <!-- For Card Format End Here-->
-            </div>
+<div class="wrapper">
+    <!-- For Card Format Start Here-->
+    @for (obj of _tenderIndexList; track obj.id ;let index = $index) {
+    <div class="tendercard">
+        <app-tendercard [data]="obj"></app-tendercard>
+    </div>
+    } <!-- For Card Format End Here-->
 </div>

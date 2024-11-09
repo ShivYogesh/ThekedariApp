@@ -8,7 +8,9 @@ const tenderindexRoute=require('./routes/tenderindexRote');
 const loginRoute=require('./routes/loginRote');
 const cors=require('cors');
 require('dotenv').config();
+const userModel=require('./dataModels/userModel');
 const app=express();
+userModel.sync();
 
 //Midelware
 

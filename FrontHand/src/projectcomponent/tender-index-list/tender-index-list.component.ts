@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tenderIndexModel } from '../../models/tenderIndexModel';
+import { tenderIndexModel } from '../../models/dataTable/tenderIndexModel';
 import { TendercardComponent } from '../tendercard/tendercard.component';
 import { TenderIndexService } from '../../services/tender-index.service';
 

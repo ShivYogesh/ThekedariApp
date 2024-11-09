@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { userModel } from '../models/userModel';
+import { userModel } from '../models/dataTable/tbl_usermasterModel';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';

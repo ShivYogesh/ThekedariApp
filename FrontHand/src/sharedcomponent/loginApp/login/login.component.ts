@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Form, FormsModule, NgForm } from '@angular/forms';
-import { userModel } from '../../../models/userModel';
+import { userModel } from '../../../models/dataTable/tbl_usermasterModel';
 import { LoginService } from '../../../services/login.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';

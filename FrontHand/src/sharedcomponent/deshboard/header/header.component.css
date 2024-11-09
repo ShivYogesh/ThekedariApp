@@ -1,18 +1,21 @@
-.headerwraper{
-   padding: 1px; 
-   height: 100%;
-   width: 100%;
+.wrapper{
+    background-color: var(--headerbgcolor);
+    color:var(--headertextcolor);
+    display:flex;
+   justify-content: space-between;
+    
 }
 .brand{
     font-size: 20px;
-    padding: 5px;;
+    max-height: 50px;
+    width:50%;
+    text-align: left;
+    padding:5px;
 }
-.actionbuttons{
-  
-   text-align: center;
-
-}
-.btn{
-    margin:5px;
-    float: inline-end;
+.userinfo{
+    font-size: 14px;
+    max-height: 50px;
+    text-align: right;
+    width: 50%; 
+    padding:5px;
 }

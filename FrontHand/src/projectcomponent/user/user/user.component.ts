@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { userModel } from '../../../models/userModel';
+import { userModel } from '../../../models/dataTable/tbl_usermasterModel';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClient } from '@angular/common/http';
 

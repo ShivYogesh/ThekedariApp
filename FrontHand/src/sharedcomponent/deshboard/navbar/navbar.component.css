@@ -1,3 +1,10 @@
+.wrapper{
+    background-color:var(--navbarbgcolor);
+    color:var(--navbartextcolor);
+    height:100%;
+    width: 100%;
+}
+
 ul{
     list-style: none;
     display: inline-flex;
@@ -10,7 +17,8 @@ ul>li{
 ul>li>a{
     text-decoration: none;
     cursor: pointer;
-    color:white;
+    color: var(--navbartextcolor);
+    
 
 }
 .activerout{

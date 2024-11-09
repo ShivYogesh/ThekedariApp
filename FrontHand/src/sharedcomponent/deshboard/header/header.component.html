@@ -1,17 +1,39 @@
-<div class="row headerwraper">
-    <div class="col-5">
-        <div class="menuicon" >
-            <button (click)="togelmenu()"><i class="fa fa-bars"></i></button>
-        </div>
-        <div class="brand">
-            Thekedari -APP
-        </div>
+<div class="wrapper">
+    <div class="brand">
+        Thekedari -APP
     </div>
-    <div class="col-7 actionbuttons">
-
-        <button class="btn btn-danger" (click)="logout()">Logout</button>
-        <!--
-        <button class="btn btn-success" routerLink="/login">Login</button>
-        -->
+    <div class="userinfo">
+       <app-userinfo></app-userinfo><br>
+       <button class="btn btn-danger" (click)="logout()">Logout</button>
+      
+     </div>
+    <div class="logoutbtn">
+              
     </div>
+    
 </div>
+<!--
+
+<div class="wrapper">
+        
+        </div>
+    <div class="userinfo">
+        <div class="userinfo">
+            <app-userinfo></app-userinfo>
+        </div>
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+    
+        <button class="btn btn-success" routerLink="/login">Login</button>
+
+    </div>
+
+
+
+
+
+
+
+
+-->
+
+

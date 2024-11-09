@@ -1,40 +1,71 @@
-
-*{
-    --darkcolor:green;
-    --white: #faf0e6;
-  }
 /*  Clear All Default Margin And Pading for All Page*/
-.container{
-    border: 2px solid red;
-    /*margin-top: 20px;*/
-    
+.wrapper {
+    display: grid;
+    height: 100vh;
+    max-width: 1650px;
+    margin: auto;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 1fr 0.4fr 5fr 2fr;
+    grid-template-areas: "header header"
+        "sidemenu navbar"
+        "sidemenu mainworkplace"
+        "sidemenu footer";
+        grid-gap: 0.2rem;
 
 }
-.header{
-    background-color: var(--primarycolor);
-    min-height: 110px;
-    color: white;
-    padding: 2px;
-}
-.navbar{
-    background-color: blueviolet;
-    height: 50px;
-    color: white;
-}
-.sidemenu{
-    
-    height: 100%;   
-    width: 100%;
-    color: darkblue;
-}
-.mainworkplace{
-    background-color: bisque;
-    min-height: 650px;
-}
-.footer{
-    background-color: var(--primarycolor);
+
+.header {
+    background-color: var(--headerbgcolor);
+    color: var(--headertextcolor);
     min-height: 150px;
-    font-size: 20px;
-    color:white;
-    text-align: center;
+    grid-area: header;
+    border-radius: 5px;
+
+}
+
+.navbar {
+    background-color:var(--navbarbgcolor);
+    color: var(--navbartextcolor);
+    grid-area: navbar;
+    border-radius: 5px;
+
+}
+
+.sidemenu {
+    background-color: var(--sidebarbgcolor);
+    color: var(--sidebartextcolor);
+    grid-area: sidemenu;
+    border-radius: 5px;
+
+}
+
+.mainworkplace {
+    background-color: var(--mainbgcolor);
+    color: var(--maintextcolor);
+    grid-area: mainworkplace;
+    border-radius: 10px;
+    
+}
+
+.footer {
+    background-color: var(--footerbgcolor);
+    color: var(--footertextcolor);
+    background-color: blue;
+    border-radius: 5px;
+    grid-area: footer; /* ye footer kee grid id ke tarha ke property ha jo grid area me kaam a rahe ha */
+    min-height: 250px;
+
+
+}
+@media  (max-wdth:640px){
+    .wrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 2fr 0.2fr 1.2fr 1.2fr;
+        grid-template-areas: "header"
+        "sidemenu"
+        "navbar"
+        "mainworkplace"
+        "footer";
+    }
+    
 }
