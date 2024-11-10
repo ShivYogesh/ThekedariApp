@@ -8,10 +8,8 @@ const sequelize = new Sequelize('bu6oyaxbau5cai3hwgik'/* database */,  'uiq1ty8o
   
   try {
      sequelize.authenticate();
-    console.log('Connection has been established successfully.');
+    console.log('Squlizeconnection Connection has been established successfully.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }
-
-
   module.exports=sequelize;

@@ -1,6 +1,6 @@
 const mySQLConnection=require('../connection');
 const tabelName="tbl_masters_users";
-var _dbTabelModel=require('../dataModels/userModel');
+const userModel=require('../dataModels/userModel');
 var SQLQuery;
 
 /* START*/
@@ -19,7 +19,6 @@ async function handelGetAll(req,response){
         }
     })// End mySQLConnection
 };
-
 /* END */
 /* START*/
 /*  This function Get  Data By Id from Tabel -Single Record */
@@ -44,6 +43,8 @@ async function handelGetById(req,response){
 /* END */
 /* START*/
 /*  This function Add A New Record in Tabel */
+
+
 async function handelAddNewRecord(req,response){
     //SQLQuery="insert into "+tabelName+"(username,pwd,isactive) values("+"'"+username+"','"+pwd+"' ,"+isactive+ ")"; ye bhi ok ha
     SQLQuery=`insert into ${tabelName} (username,pwd,isactive) values('${req.body.username}','${req.body.pwd}',${req.body.isactive})`;
@@ -64,6 +65,9 @@ async function handelAddNewRecord(req,response){
 /* END */
 /* START*/
 /*  This function Update A Old Record By Id in Tabel */
+
+
+
 async function handelUpdateById(req,response){
 
    // SQLQuery="update "+tabelName+" set username='"+req.body.username+"', pwd='"+req.body.pwd+"',isactive='"+req.body.isactive +"' where id="+req.params.id; // ye bhi ok ha 
@@ -85,6 +89,7 @@ async function handelUpdateById(req,response){
 /* END */
 /* START*/
 /*  This function Delete A Record By Id in Tabel */
+
 async function handelDeleteById(req,response){
    // SQLQuery='delete  from '+tabelName+' where id='+req.params.id;//ye bhi ok ha
     SQLQuery=`delete from ${tabelName} where id=${req.params.id}`;
@@ -107,4 +112,5 @@ module.exports={
     handelAddNewRecord,
     handelUpdateById,
     handelDeleteById,
+   
 };
