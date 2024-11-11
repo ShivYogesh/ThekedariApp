@@ -1,4 +1,4 @@
-const mySQLConnection=require('../connection');
+const mySQLConnection=require('../database/connection');
 const tabelName="tbl_masters_tender_index";
 var _dbTabelModel=require('../dataModels/tenderindexModel');
 

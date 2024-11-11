@@ -1,6 +1,7 @@
 const express=require('express');
 const router=express.Router();
-const {handelGetAll,handelGetById,handelAddNewRecord,handelUpdateById,handelDeleteById}=require('../controllers/userController');
+const {handelGetAll,handelAddNewRecord}=require('../controllers/userController');
+const {handelGetById,handelUpdateById,handelDeleteById}=require('../controllers/userController');
 const checkAuth=require('../middleware/checkauth');
 /*  *********** Start *****************   */
 // This Route is Route as [/api/user]

@@ -1,5 +1,5 @@
 const express=require('express');
-const mySQLConnection=require('./connection');
+const mySQLConnection=require('./database/connection');
 const bodyparser=require('body-parser');
 const teting01Router=require('./routes/testing01');
 const testing02Router=require('./routes/testing02');

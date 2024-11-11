@@ -1,4 +1,4 @@
-const mySQLConnection = require('../connection');
+const mySQLConnection = require('../database/connection');
 const tabelName = "tbl_usermaster";
 var _userModel = require('../dataModels/userModel');
 var _userModelforJWT=require('../dataModels/userModel');

@@ -1,4 +1,4 @@
-const mySQLConnection=require('../connection');
+const mySQLConnection=require('../database/connection');
 const tabelName="tbl_masters_users";
 const userModel=require('../dataModels/userModel');
 var SQLQuery;
