@@ -7,7 +7,12 @@ export class LogoutService {
 
   constructor() { }
   logout(){
-    sessionStorage.clear();
+    try {
+      sessionStorage.clear();
+    } catch (error) {
+      alert("Error From session Storage ");
+    }
+    
     
   }
 }

@@ -2,7 +2,18 @@
     <!--  Row For User Info Start -->
     <div class="userinfo">
         <img class="userpic" src="{{userpicpath}}" alt="user Pic">
-        <p class="username">{{username}}</p>
+        
+        <div class="dropdown mt-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{username}}
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="">Profile</a></li><hr/>
+              <li><a class="dropdown-item" routerLink="">Reset Password</a></li><hr/>
+              <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+            </ul>
+          </div>
+       
     </div>
     <!--  Row For User Info End -->
 </div>
